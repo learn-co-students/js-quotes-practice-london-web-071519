@@ -47,11 +47,17 @@ fetch('http://localhost:3000/quotes?_embed=likes')
         myQuote.innerHTML = `
         <li class='quote-card'>
         <blockquote class="blockquote">
-         <p class="mb-0">${element.quote}</footer>
+         <p class="mb-0">"${element.quote}"</footer>
          <br>
-             <button id=${element.id} class='btn-success'>Likes: <span>${element.likes.length}</span></button>
+         
+         <p class="mb-0">- ${element.author}</footer>
+         
+         <br>
+          <button id=${element.id} class='btn-success'>Likes: <span>${element.likes.length}</span></button>
          <button id=${element.id} class='btn-danger'>Delete</button>
+         
         </blockquote>
+        <br>
         </li>`
         myQuotelist.prepend(myQuote)
         let deleteButton = myQuote.querySelector('.btn-danger')
